@@ -5,3 +5,43 @@
 - name: "Midjourney"
   category: "Image Generation"
   website: "https://www.midjourney.com/"
+
+- name: Llama
+  category: AI Assistant
+  website: https://research.huggingface.co/llama
+
+- name: DALL-E
+  category: Image Generation
+  website: https://dalle.io/
+
+- name: DeepDream Generator
+  category: Image Manipulation
+  website: http://deepdreamgenerator.com/
+
+- name: Prism
+  category: Text-to-Image Synthesis
+  website: https://prism.ai/
+
+- name: Artbreeder
+  category: Art Generation
+  website: https://artbreeder.com/
+
+- name: StyleGAN
+  category: Image Synthesis
+  website: http://stylegan.asia/
+
+- name: Diffusers
+  category: AI Model Generator
+  website: https://research.huggingface.co/diffusers
+
+- name: Ahrefs AI Content Tool
+  category: Content Generation
+  website: https://ahrefs.com/ai-content-tool
+
+- name: WordLift
+  category: Content Optimization
+  website: https://wordlift.io/
+
+- name: Google AI Writer
+  category: AI Writing Assistant
+  website: https://writers.google.com
