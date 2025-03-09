@@ -1,0 +1,7 @@
+- name: "ChatGPT"
+  category: "AI Assistant"
+  website: "https://openai.com/chatgpt"
+
+- name: "Midjourney"
+  category: "Image Generation"
+  website: "https://www.midjourney.com/"
