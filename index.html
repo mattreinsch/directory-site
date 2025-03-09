@@ -9,21 +9,40 @@
 <body class="bg-gray-100 text-gray-900">
     <div class="max-w-4xl mx-auto p-6">
         <h1 class="text-3xl font-bold text-center mb-6">AI Tools Directory</h1>
-        <h1>AI Tools Directory</h1>
+        <p><input type="text" id="search" placeholder="Search tools..." class="w-full p-2 border rounded mb-4" onkeyup="filterTools()" /></p>
 
-<ul>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
   
-    <li>
-      <strong>ChatGPT</strong> - AI Assistant 
-      (<a href="https://openai.com/chatgpt">Website</a>)
-    </li>
+  <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">ChatGPT</h2>
+      <p class="text-sm text-gray-600">AI Assistant</p>
+      <a href="https://openai.com/chatgpt" class="text-blue-500" target="_blank">Visit Website</a>
+  </div>
   
-    <li>
-      <strong>Midjourney</strong> - Image Generation 
-      (<a href="https://www.midjourney.com/">Website</a>)
-    </li>
+  <div class="bg-white p-4 rounded shadow">
+      <h2 class="text-lg font-bold">Midjourney</h2>
+      <p class="text-sm text-gray-600">Image Generation</p>
+      <a href="https://www.midjourney.com/" class="text-blue-500" target="_blank">Visit Website</a>
+  </div>
   
-</ul>
+</div>
+
+<script>
+function filterTools() {
+    let input = document.getElementById("search").value.toLowerCase();
+    let cards = document.querySelectorAll(".bg-white");
+
+    cards.forEach(card => {
+        let name = card.querySelector("h2").textContent.toLowerCase();
+        if (name.includes(input)) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+</script>
+
 
     </div>
 </body>
