@@ -3,125 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="AI Tools Directory">
-    <meta name="description" content="Discover the best AI tools and resources in one place.">
-    <meta name="keywords" content="AI tools, artificial intelligence, machine learning, deep learning">
-    <meta name="robots" content="index, follow">
-  
-    <!-- Open Graph for social sharing -->
-    <meta property="og:title" content="AI Tools Directory">
-    <meta property="og:description" content="Discover the best AI tools and resources in one place.">
-    <meta property="og:image" content="/assets/preview.jpg">
-    <meta property="og:url" content="/">
-  
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AI Tools Directory">
-    <meta name="twitter:description" content="Discover the best AI tools and resources in one place.">
-    <meta name="twitter:image" content="/assets/preview.jpg">
-  
     <title>AI Tools Directory</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 text-gray-900">
-    <div class="max-w-4xl mx-auto p-6">
-        <h1 class="text-3xl font-bold text-center mb-6">AI Tools Directory</h1>
-        <p><input type="text" id="search" placeholder="Search tools..." class="w-full p-2 border rounded mb-4" onkeyup="filterTools()" /></p>
-
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">ChatGPT</h2>
-      <p class="text-sm text-gray-600">AI Assistant</p>
-      <a href="https://openai.com/chatgpt" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Midjourney</h2>
-      <p class="text-sm text-gray-600">Image Generation</p>
-      <a href="https://www.midjourney.com/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Llama</h2>
-      <p class="text-sm text-gray-600">AI Assistant</p>
-      <a href="https://research.huggingface.co/llama" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">DALL-E</h2>
-      <p class="text-sm text-gray-600">Image Generation</p>
-      <a href="https://dalle.io/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">DeepDream Generator</h2>
-      <p class="text-sm text-gray-600">Image Manipulation</p>
-      <a href="http://deepdreamgenerator.com/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Prism</h2>
-      <p class="text-sm text-gray-600">Text-to-Image Synthesis</p>
-      <a href="https://prism.ai/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Artbreeder</h2>
-      <p class="text-sm text-gray-600">Art Generation</p>
-      <a href="https://artbreeder.com/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">StyleGAN</h2>
-      <p class="text-sm text-gray-600">Image Synthesis</p>
-      <a href="http://stylegan.asia/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Diffusers</h2>
-      <p class="text-sm text-gray-600">AI Model Generator</p>
-      <a href="https://research.huggingface.co/diffusers" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Ahrefs AI Content Tool</h2>
-      <p class="text-sm text-gray-600">Content Generation</p>
-      <a href="https://ahrefs.com/ai-content-tool" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">WordLift</h2>
-      <p class="text-sm text-gray-600">Content Optimization</p>
-      <a href="https://wordlift.io/" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-  <div class="bg-white p-4 rounded shadow">
-      <h2 class="text-lg font-bold">Google AI Writer</h2>
-      <p class="text-sm text-gray-600">AI Writing Assistant</p>
-      <a href="https://writers.google.com" class="text-blue-500" target="_blank">Visit Website</a>
-  </div>
-  
-</div>
-
-<script>
-function filterTools() {
-    let input = document.getElementById("search").value.toLowerCase();
-    let cards = document.querySelectorAll(".bg-white");
-
-    cards.forEach(card => {
-        let name = card.querySelector("h2").textContent.toLowerCase();
-        if (name.includes(input)) {
-            card.style.display = "block";
-        } else {
-            card.style.display = "none";
-        }
-    });
-}
-</script>
-
-
+<body>
+    <header>
+        <h1>🚀 AI Tools Directory</h1>
+        <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    </header>
+    
+    <input type="text" id="search" placeholder="Search AI tools..." onkeyup="filterTools()">
+    
+    <div class="filters">
+        <button onclick="filterCategory('All')">All</button>
+        <button onclick="filterCategory('NLP')">NLP</button>
+        <button onclick="filterCategory('Computer Vision')">Computer Vision</button>
     </div>
+    
+    <div id="tools-container">
+        <div class="tool-card" data-category="NLP">
+            <h3>GPT-4</h3>
+            <p>AI-powered text generation.</p>
+            <span>🔥 95% positive reviews</span>
+        </div>
+        <div class="tool-card" data-category="Computer Vision">
+            <h3>Stable Diffusion</h3>
+            <p>AI for image generation.</p>
+            <span>🌟 90% positive reviews</span>
+        </div>
+    </div>
+    
+    <h2>Submit an AI Tool</h2>
+    <form action="https://forms.google.com/your-form-link" target="_blank">
+        <input type="text" name="tool" placeholder="Tool Name" required>
+        <input type="text" name="category" placeholder="Category" required>
+        <input type="url" name="link" placeholder="Website URL" required>
+        <button type="submit">Submit</button>
+    </form>
+    
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+        
+        function filterTools() {
+            let query = document.getElementById("search").value.toLowerCase();
+            document.querySelectorAll(".tool-card").forEach(tool => {
+                tool.style.display = tool.innerText.toLowerCase().includes(query) ? "block" : "none";
+            });
+        }
+        
+        function filterCategory(category) {
+            document.querySelectorAll(".tool-card").forEach(tool => {
+                tool.style.display = (category === 'All' || tool.getAttribute("data-category") === category) ? "block" : "none";
+            });
+        }
+    </script>
+    
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .dark-mode { background: #121212; color: white; }
+        .tool-card { border: 1px solid #ddd; padding: 15px; margin: 10px; border-radius: 10px; transition: transform 0.2s; }
+        .tool-card:hover { transform: scale(1.05); }
+    </style>
 </body>
 </html>
-
