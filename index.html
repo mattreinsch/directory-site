@@ -19,18 +19,15 @@
         <button onclick="filterCategory('NLP')">NLP</button>
         <button onclick="filterCategory('Computer Vision')">Computer Vision</button>
     </div>
-    
+
     <div id="tools-container">
-        <div class="tool-card" data-category="NLP">
-            <h3>GPT-4</h3>
-            <p>AI-powered text generation.</p>
-            <span>🔥 95% positive reviews</span>
+        {% for tool in site.data.tools.tools %}
+        <div class="tool-card" data-category="{{ tool.category }}">
+            <h3>{{ tool.name }}</h3>
+            <p>{{ tool.description }}</p>
+            <a href="{{ tool.link }}" target="_blank">Visit</a>
         </div>
-        <div class="tool-card" data-category="Computer Vision">
-            <h3>Stable Diffusion</h3>
-            <p>AI for image generation.</p>
-            <span>🌟 90% positive reviews</span>
-        </div>
+        {% endfor %}
     </div>
     
     <h2>Submit an AI Tool</h2>
