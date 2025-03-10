@@ -26,121 +26,187 @@
 <body class="bg-gray-100 text-gray-900">
     <div class="max-w-4xl mx-auto p-6">
         <h1 class="text-3xl font-bold text-center mb-6">AI Tools Directory</h1>
-        <!-- Dark Mode Toggle -->
-<p><button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-700 text-white rounded">
-    🌙 Dark Mode
-</button></p>
+        <!-- Main Container -->
+<div class="container mx-auto px-4 py-6">
 
-<!-- Search Bar -->
-<p><input type="text" id="search" placeholder="Search tools..." class="w-full p-2 border rounded mb-4" onkeyup="filterTools()" /></p>
+  <!-- Dark Mode Toggle -->
+  <button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-700 text-white rounded">
+      🌙 Dark Mode
+  </button>
 
-<!-- Category Filter Buttons -->
-<div class="mb-4">
-    <button onclick="filterCategory('All')" class="px-4 py-2 bg-gray-300 rounded mr-2">All</button>
-    
-    
-    <button onclick="filterCategory('AI Assistant')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Assistant</button>
-    
-    <button onclick="filterCategory('Image Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Generation</button>
-    
-    <button onclick="filterCategory('Image Manipulation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Manipulation</button>
-    
-    <button onclick="filterCategory('Text-to-Image Synthesis')" class="px-4 py-2 bg-gray-300 rounded mr-2">Text-to-Image Synthesis</button>
-    
-    <button onclick="filterCategory('Art Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Art Generation</button>
-    
-    <button onclick="filterCategory('Image Synthesis')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Synthesis</button>
-    
-    <button onclick="filterCategory('AI Model Generator')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Model Generator</button>
-    
-    <button onclick="filterCategory('Content Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Content Generation</button>
-    
-    <button onclick="filterCategory('Content Optimization')" class="px-4 py-2 bg-gray-300 rounded mr-2">Content Optimization</button>
-    
-    <button onclick="filterCategory('AI Writing Assistant')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Writing Assistant</button>
-    
+  <!-- Search Bar -->
+  <div class="mb-4">
+      <input type="text" id="search" placeholder="Search AI tools..." class="w-full p-2 border rounded mb-4" onkeyup="filterTools()" />
+  </div>
+
+  <!-- Filter by Category -->
+  <div class="mb-4">
+      <button onclick="filterCategory('All')" class="px-4 py-2 bg-gray-300 rounded mr-2">All</button>
+      
+      
+      <button onclick="filterCategory('AI Assistant')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Assistant</button>
+      
+      <button onclick="filterCategory('Image Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Generation</button>
+      
+      <button onclick="filterCategory('Image Manipulation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Manipulation</button>
+      
+      <button onclick="filterCategory('Text-to-Image Synthesis')" class="px-4 py-2 bg-gray-300 rounded mr-2">Text-to-Image Synthesis</button>
+      
+      <button onclick="filterCategory('Art Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Art Generation</button>
+      
+      <button onclick="filterCategory('Image Synthesis')" class="px-4 py-2 bg-gray-300 rounded mr-2">Image Synthesis</button>
+      
+      <button onclick="filterCategory('AI Model Generator')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Model Generator</button>
+      
+      <button onclick="filterCategory('Content Generation')" class="px-4 py-2 bg-gray-300 rounded mr-2">Content Generation</button>
+      
+      <button onclick="filterCategory('Content Optimization')" class="px-4 py-2 bg-gray-300 rounded mr-2">Content Optimization</button>
+      
+      <button onclick="filterCategory('AI Writing Assistant')" class="px-4 py-2 bg-gray-300 rounded mr-2">AI Writing Assistant</button>
+      
+  </div>
+
+  <!-- Tools Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="tools-container">
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="AI Assistant">
+          <img src="" alt="ChatGPT" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">ChatGPT</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">AI Assistant</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://openai.com/chatgpt" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Image Generation">
+          <img src="" alt="Midjourney" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Midjourney</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Image Generation</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://www.midjourney.com/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="AI Assistant">
+          <img src="" alt="Llama" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Llama</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">AI Assistant</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://research.huggingface.co/llama" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Image Generation">
+          <img src="" alt="DALL-E" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">DALL-E</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Image Generation</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://dalle.io/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Image Manipulation">
+          <img src="" alt="DeepDream Generator" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">DeepDream Generator</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Image Manipulation</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="http://deepdreamgenerator.com/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Text-to-Image Synthesis">
+          <img src="" alt="Prism" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Prism</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Text-to-Image Synthesis</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://prism.ai/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Art Generation">
+          <img src="" alt="Artbreeder" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Artbreeder</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Art Generation</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://artbreeder.com/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Image Synthesis">
+          <img src="" alt="StyleGAN" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">StyleGAN</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Image Synthesis</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="http://stylegan.asia/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="AI Model Generator">
+          <img src="" alt="Diffusers" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Diffusers</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">AI Model Generator</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://research.huggingface.co/diffusers" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Content Generation">
+          <img src="" alt="Ahrefs AI Content Tool" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Ahrefs AI Content Tool</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Content Generation</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://ahrefs.com/ai-content-tool" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="Content Optimization">
+          <img src="" alt="WordLift" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">WordLift</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">Content Optimization</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://wordlift.io/" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+      <div class="bg-white p-4 rounded shadow-lg tool-card" data-category="AI Writing Assistant">
+          <img src="" alt="Google AI Writer" class="h-24 w-24 object-contain mb-4 mx-auto" />
+          <h2 class="text-lg font-bold text-center">Google AI Writer</h2>
+          <p class="text-sm text-gray-600 text-center mb-2">AI Writing Assistant</p>
+          <p class="text-sm text-gray-800 text-center mb-4"></p>
+          <div class="flex justify-center">
+              <a href="https://writers.google.com" class="text-blue-500 text-center" target="_blank">Visit Website</a>
+          </div>
+      </div>
+      
+  </div>
+
+  <!-- Pagination / Load More Button -->
+  <div id="pagination" class="text-center mt-8">
+      <button id="load-more" class="px-4 py-2 bg-blue-500 text-white rounded" onclick="loadMoreTools()">Load More Tools</button>
+  </div>
+
+  <!-- Call to Action -->
+  <div class="mt-8 text-center">
+      <h3 class="text-2xl font-bold mb-4">Submit a Tool</h3>
+      <p>Have a great AI tool that we haven't listed yet? Submit it and get featured!</p>
+      <a href="https://forms.google.com/your-form-link" class="mt-4 inline-block px-6 py-2 bg-green-500 text-white rounded">Submit a Tool</a>
+  </div>
+
 </div>
 
-<!-- Tools Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" id="tools-container">
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="AI Assistant">
-        <h2 class="text-lg font-bold">ChatGPT</h2>
-        <p class="text-sm text-gray-600">AI Assistant</p>
-        <a href="https://openai.com/chatgpt" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Image Generation">
-        <h2 class="text-lg font-bold">Midjourney</h2>
-        <p class="text-sm text-gray-600">Image Generation</p>
-        <a href="https://www.midjourney.com/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="AI Assistant">
-        <h2 class="text-lg font-bold">Llama</h2>
-        <p class="text-sm text-gray-600">AI Assistant</p>
-        <a href="https://research.huggingface.co/llama" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Image Generation">
-        <h2 class="text-lg font-bold">DALL-E</h2>
-        <p class="text-sm text-gray-600">Image Generation</p>
-        <a href="https://dalle.io/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Image Manipulation">
-        <h2 class="text-lg font-bold">DeepDream Generator</h2>
-        <p class="text-sm text-gray-600">Image Manipulation</p>
-        <a href="http://deepdreamgenerator.com/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Text-to-Image Synthesis">
-        <h2 class="text-lg font-bold">Prism</h2>
-        <p class="text-sm text-gray-600">Text-to-Image Synthesis</p>
-        <a href="https://prism.ai/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Art Generation">
-        <h2 class="text-lg font-bold">Artbreeder</h2>
-        <p class="text-sm text-gray-600">Art Generation</p>
-        <a href="https://artbreeder.com/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Image Synthesis">
-        <h2 class="text-lg font-bold">StyleGAN</h2>
-        <p class="text-sm text-gray-600">Image Synthesis</p>
-        <a href="http://stylegan.asia/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="AI Model Generator">
-        <h2 class="text-lg font-bold">Diffusers</h2>
-        <p class="text-sm text-gray-600">AI Model Generator</p>
-        <a href="https://research.huggingface.co/diffusers" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Content Generation">
-        <h2 class="text-lg font-bold">Ahrefs AI Content Tool</h2>
-        <p class="text-sm text-gray-600">Content Generation</p>
-        <a href="https://ahrefs.com/ai-content-tool" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="Content Optimization">
-        <h2 class="text-lg font-bold">WordLift</h2>
-        <p class="text-sm text-gray-600">Content Optimization</p>
-        <a href="https://wordlift.io/" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-    <div class="bg-white p-4 rounded shadow tool-card" data-category="AI Writing Assistant">
-        <h2 class="text-lg font-bold">Google AI Writer</h2>
-        <p class="text-sm text-gray-600">AI Writing Assistant</p>
-        <a href="https://writers.google.com" class="text-blue-500" target="_blank">Visit Website</a>
-    </div>
-    
-</div>
-
-<!-- Script for Functionality -->
 <script>
-// Toggle Dark Mode
+// Dark Mode Toggle
 function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
 }
@@ -172,9 +238,34 @@ function filterCategory(category) {
         }
     });
 }
+
+// Pagination Logic (or Infinite Scroll)
+let currentPage = 1;
+const toolsPerPage = 6;
+const tools = document.querySelectorAll(".tool-card");
+
+function showPage(page) {
+    const startIndex = (page - 1) * toolsPerPage;
+    const endIndex = startIndex + toolsPerPage;
+
+    tools.forEach((tool, index) => {
+        if (index >= startIndex && index < endIndex) {
+            tool.style.display = 'block';
+        } else {
+            tool.style.display = 'none';
+        }
+    });
+}
+
+function loadMoreTools() {
+    currentPage++;
+    showPage(currentPage);
+}
+
+// Initially load the first page
+showPage(currentPage);
 </script>
 
-<!-- Style for Dark Mode and Layout -->
 <style>
 /* Dark Mode Styles */
 body.dark-mode {
@@ -195,10 +286,35 @@ body.dark-mode .text-blue-500 {
     color: #4fa3f7;
 }
 
-/* Tool Card Hover */
+/* Tool Card Styling */
+.tool-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 .tool-card:hover {
     transform: scale(1.05);
-    transition: transform 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tool-card img {
+    border-radius: 50%;
+    max-width: 100%;
+    margin-bottom: 16px;
+}
+
+/* Pagination Styling */
+#pagination button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+#pagination button:hover {
+    background-color: #2980b9;
 }
 </style>
 
