@@ -2,7 +2,10 @@
 layout: default
 title: AI Tools Directory
 ---
-
+<head>
+    <!-- Add the Google Fonts link here -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+</head>
 <!-- Main Container -->
 <div class="container mx-auto px-4 py-6">
 
@@ -10,6 +13,9 @@ title: AI Tools Directory
   <button onclick="toggleDarkMode()" class="mb-4 px-4 py-2 bg-gray-700 text-white rounded">
       🌙 Dark Mode
   </button>
+
+  <!-- Title with custom font and larger size -->
+  <h1 class="text-5xl font-extrabold text-center text-gray-900 mb-8">AI Tools Directory</h1>
 
   <!-- Search Bar -->
   <div class="mb-4">
@@ -164,5 +170,15 @@ body.dark-mode .text-blue-500 {
 
 #pagination button:hover {
     background-color: #2980b9;
+}
+
+/* Larger Title with Better Font */
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 </style>
