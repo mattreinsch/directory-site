@@ -16,16 +16,18 @@
     
     <div class="filters">
         <button onclick="filterCategory('All')">All</button>
-        <button onclick="filterCategory('NLP')">NLP</button>
-        <button onclick="filterCategory('Computer Vision')">Computer Vision</button>
+        {% assign categories = site.data.tools | map: 'category' | uniq %}
+        {% for category in categories %}
+        <button onclick="filterCategory('{{ category }}')">{{ category }}</button>
+        {% endfor %}
     </div>
-
+    
     <div id="tools-container">
-        {% for tool in site.data.tools.tools %}
+        {% for tool in site.data.tools %}
         <div class="tool-card" data-category="{{ tool.category }}">
             <h3>{{ tool.name }}</h3>
-            <p>{{ tool.description }}</p>
-            <a href="{{ tool.link }}" target="_blank">Visit</a>
+            <p>{{ tool.category }}</p>
+            <a href="{{ tool.website }}" target="_blank">Visit</a>
         </div>
         {% endfor %}
     </div>
